@@ -8,7 +8,10 @@
       html, body {
         margin: 0;
         height: 100%;
-        overflow: hidden;
+      }
+      #coze-chat {
+        width: 100vw;
+        height: 100vh;
       }
     </style>
   </head>
@@ -18,13 +21,13 @@
     <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.5/libs/oversea/index.js"></script>
     <script>
       window.onload = function () {
-        new CozeWebSDK.WebChatClient({
+        new CozeWebSDK.EmbeddedChatClient({
           config: {
             bot_id: "7481691133043605509",
           },
+          target: document.getElementById("coze-chat"),
           componentProps: {
-            title: "Eternaura AI Assistant",
-            isOpen: true // 👈 添加这个让对话框默认展开
+            title: "Eternaura AI Assistant"
           },
           auth: {
             type: "token",
