@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eternaura AI Chat</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #coze-chat {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="coze-chat"></div>
+
+    <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.5/libs/oversea/index.js"></script>
+    <script>
+      window.onload = function () {
+        new CozeWebSDK.EmbeddedChatClient({
+          config: {
+            bot_id: "7481691133043605509",
+          },
+          target: document.getElementById("coze-chat"),
+          componentProps: {
+            title: "Eternaura AI Assistant",
+          },
+          auth: {
+            type: "token",
+            token: "pat_E8ff9Nx5ojOBgzU7CEfDpxBnw8W6BWi1JaLJiY0JDJSCjA2OGfudTsbZq4OfltWh",
+            onRefreshToken: function () {
+              return "pat_E8ff9Nx5ojOBgzU7CEfDpxBnw8W6BWi1JaLJiY0JDJSCjA2OGfudTsbZq4OfltWh";
+            }
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
